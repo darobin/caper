@@ -1,0 +1,31 @@
+{
+  "name": "caper",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Content-Addressed Protocol for Efficient Retrieval",
+  "author": "Robin Berjon <robin@berjon.com>",
+  "license": "MIT",
+  "scripts": {},
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darobin/caper.git"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "mocha": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {}
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0"
+  }
+}
