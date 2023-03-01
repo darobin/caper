@@ -1,6 +1,7 @@
 
 const b32codes = new Map('abcdefghijklmnopqrstuvwxyz234567'.split('').map((k, i) => [k, i]));
-const cidContentTypes = {
+console.warn(b32codes);
+export const cidContentTypes = {
   raw: 0x55,
   dagCBOR: 0x71,
   dagPB: 0x70,
@@ -22,6 +23,7 @@ export function parse (cid) {
   if (typeof cid === 'string') {
     if (cid.length === 46 && /^Qm/.test(cid)) throw new Error('CIDv0 is not supported.');
     if (cid[0] !== 'b') throw new Error('Only base32 lowercase is supported.');
+    cid = cid.substring(1);
     const bitsPerChar = 5;
     uarr = new Uint8Array((cid.length * bitsPerChar / 8) | 0);
     let bits = 0;
@@ -38,6 +40,7 @@ export function parse (cid) {
       }
     }
     if (bits >= bitsPerChar || 0xff & (buffer << (8 - bits))) {
+      console.warn(bits, bitsPerChar, 0xff & (buffer << (8 - bits)));
       throw new Error('Unexpected end of data');
     }
   }
