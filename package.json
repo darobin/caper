@@ -5,7 +5,9 @@
   "description": "Content-Addressed Protocol for Efficient Retrieval",
   "author": "Robin Berjon <robin@berjon.com>",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha"
+  },
   "bin": {},
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   },
   "devDependencies": {
     "eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "mocha": "^10.2.0"
   }
 }
